@@ -3,7 +3,7 @@
     <target name="compile_core">
         <delete dir="100_core/bin"/>
         <mkdir dir="100_core/bin"/>
-        <javac fork="yes" includeantruntime="false" sourcepath="" srcdir="100_core" destdir="100_core/bin" classpath="lib/junit.jar:100_core/lib/commons-compress-1.5.jar">
+        <javac fork="yes" includeantruntime="false" sourcepath="" srcdir="100_core" destdir="100_core/bin" classpath="lib/junit.jar:100_core/lib/commons-compress-1.5.jar:100_core/lib/xz-1.5.jar">
           <include name="**/*.java"/>
         </javac>
     </target>
@@ -17,7 +17,7 @@
     <target name="compile_dbs">
         <delete dir="140_dbs/bin"/>
         <mkdir dir="140_dbs/bin"/>
-        <javac fork="yes" includeantruntime="false" sourcepath="" srcdir="140_dbs" destdir="140_dbs/bin" classpath="lib/junit.jar:100_core/bin:140_dbs/lib/sqlite-jdbc-3.8.11.2.jar">
+	<javac fork="yes" includeantruntime="false" sourcepath="" srcdir="140_dbs" destdir="140_dbs/bin" classpath="lib/junit.jar:100_core/bin:140_dbs/lib/*">
           <include name="**/*.java"/>
         </javac>
     </target>
@@ -31,7 +31,7 @@
     <target name="compile_xowa" depends="compile_core,compile_gfml,compile_dbs,compile_gfui">
         <delete dir="400_xowa/bin"/>
         <mkdir dir="400_xowa/bin"/>
-        <javac fork="yes" includeantruntime="false" sourcepath="" srcdir="400_xowa" destdir="400_xowa/bin" classpath="lib/junit.jar:100_core/bin:110_gfml/bin:140_dbs/bin:150_gfui/bin:400_xowa/lib/luaj_xowa.jar:400_xowa/lib/jtidy_xowa.jar">
+	<javac fork="yes" includeantruntime="false" sourcepath="" srcdir="400_xowa" destdir="400_xowa/bin" classpath="lib/junit.jar:100_core/bin:110_gfml/bin:140_dbs/bin:150_gfui/bin:400_xowa/lib/luaj_xowa.jar:400_xowa/lib/jtidy_xowa.jar:400_xowa/lib/icu4j-4.8.jar:gplx.gflucene/src:gplx.gflucene/lib/5.3.0.drd/*">
           <compilerarg line="-encoding utf-8"/>
           <include name="**/*.java"/>
         </javac>
