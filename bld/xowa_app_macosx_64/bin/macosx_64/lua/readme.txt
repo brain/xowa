@@ -1,0 +1,1 @@
+These binaries are from the lua-5.1.4_MacOS107_bin set at https://sourceforge.net/projects/luabinaries/files/5.1.4/Executables/
