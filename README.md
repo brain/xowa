@@ -63,6 +63,12 @@ XOWA has seven dependencies:
 #### Run the ant file
 * Open up a console, and run "ant -buildfile build.xml -Dplat_name=linux_64"
 
+#### Build with docker
+@Arun please update after dockerized
+* ant -buildfile build.xml -Dplat_name=linux_64
+* bld/xowa_app_linux_64/xowa_linux_64.sh
+
+
 ### IDE instructions (Eclipse)
 #### Environment
 The '''xowa_source.7z''' was built with Eclipse Indigo. There are no OS dependencies, nor are there dependencies on Eclipse.
