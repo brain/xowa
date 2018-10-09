@@ -46,7 +46,7 @@ public class Xoa_cmd_arg_mgr {
 		this.tcp__port_recv = arg_mgr.Get_by("server_port_recv").Val_as_int_or(55000);
 		this.tcp__port_send = arg_mgr.Get_by("server_port_send").Val_as_int_or(55001);
 		this.http__port = arg_mgr.Get_by("http_server_port").Val_as_int_or(8080);
-		this.http__home_page = arg_mgr.Get_by("http_server_home").Val_as_str_or("home/wiki/Main_Page");
+		this.http__home_page = arg_mgr.Get_by("http_server_home").Val_as_str_or("simple.wikipedia.org");
 		this.http__max_clients = arg_mgr.Get_by("http_server.max_clients").Val_as_int_or(0);
 		this.http__max_clients_timeout = arg_mgr.Get_by("http_server.max_clients_timeout").Val_as_int_or(50);
 		this.http__special_pages_safelist = arg_mgr.Get_by("http_server.special_pages_safelist").Val_as_str_or(null);
@@ -77,7 +77,7 @@ public class Xoa_cmd_arg_mgr {
 		, Gfo_cmd_arg_itm_.opt_("server_port_recv").Example_("55000").Note_("applies to --app_mode server; port where xowa server will receive messages; clients should send messages to this port")
 		, Gfo_cmd_arg_itm_.opt_("server_port_send").Example_("55001").Note_("applies to --app_mode server; port where xowa server will send messages; clients should listen for messages from this port")
 		, Gfo_cmd_arg_itm_.opt_("http_server_port").Example_("8080").Note_("applies to --app_mode http_server; port used by http_server; default is 8080")
-		, Gfo_cmd_arg_itm_.opt_("http_server_home").Example_("home/wiki/Main_Page").Note_("applies to --app_mode http_server; default home page for root address. EX: navigating to localhost:8080 will navigate to localhost:8080/home/wiki/Main_Page. To navigate to a wiki's main page, use the domain name only. EX: --http_server_home en.wikipedia.org")
+		, Gfo_cmd_arg_itm_.opt_("http_server_home").Example_("simple.wikipedia.org").Note_("applies to --app_mode http_server; default home page for root address. EX: navigating to localhost:8080 will navigate to localhost:8080/home/wiki/Main_Page. To navigate to a wiki's main page, use the domain name only. EX: --http_server_home en.wikipedia.org")
 		, Gfo_cmd_arg_itm_.opt_("http_server.max_clients").Example_("15").Note_("applies to --app_mode http_server; limits maximum number of concurrent connections; default is 0 (no limit)")
 		, Gfo_cmd_arg_itm_.opt_("http_server.max_clients_timeout").Example_("50").Note_("applies to --app_mode http_server; time in milliseconds to wait before checking again to see if a connection is free; default is 50 (wait 50 ms)")
 		, Gfo_cmd_arg_itm_.opt_("http_server.special_pages_safelist").Example_("Random|XowaSearch|AllPages").Note_("specifies list of permitted special pages; special-page name is case-insensitive and must be separated by pipes (|); default is '' which permits all special pages")
