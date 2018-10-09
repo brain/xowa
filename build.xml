@@ -28,10 +28,17 @@
           <include name="**/*.java"/>
         </javac>
     </target>
-    <target name="compile_xowa" depends="compile_core,compile_gfml,compile_dbs,compile_gfui">
+    <target name="compile_gflucene">
+        <delete dir="gplx.gflucene/bin"/>
+        <mkdir dir="gplx.gflucene/bin"/>
+	<javac fork="yes" includeantruntime="false" sourcepath="" srcdir="gplx.gflucene" destdir="gplx.gflucene/bin" classpath="lib/junit.jar:100_core/bin:gplx.gflucene/lib/5.3.0.drd/*">
+          <include name="**/*.java"/>
+        </javac>
+    </target>
+    <target name="compile_xowa" depends="compile_core,compile_gfml,compile_dbs,compile_gfui,compile_gflucene">
         <delete dir="400_xowa/bin"/>
         <mkdir dir="400_xowa/bin"/>
-	<javac fork="yes" includeantruntime="false" sourcepath="" srcdir="400_xowa" destdir="400_xowa/bin" classpath="lib/junit.jar:100_core/bin:110_gfml/bin:140_dbs/bin:150_gfui/bin:400_xowa/lib/luaj_xowa.jar:400_xowa/lib/jtidy_xowa.jar:400_xowa/lib/icu4j-4.8.jar:gplx.gflucene/src:gplx.gflucene/lib/5.3.0.drd/*">
+	<javac fork="yes" includeantruntime="false" sourcepath="" srcdir="400_xowa" destdir="400_xowa/bin" classpath="lib/junit.jar:100_core/bin:110_gfml/bin:140_dbs/bin:150_gfui/bin:400_xowa/lib/luaj_xowa.jar:400_xowa/lib/jtidy_xowa.jar:400_xowa/lib/icu4j-4.8.jar:gplx.gflucene/bin:gplx.gflucene/lib/5.3.0.drd/*">
           <compilerarg line="-encoding utf-8"/>
           <include name="**/*.java"/>
         </javac>
