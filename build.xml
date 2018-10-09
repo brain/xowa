@@ -53,6 +53,7 @@
             <fileset dir="110_gfml/bin"/>
             <fileset dir="140_dbs/bin"/>
             <fileset dir="150_gfui/bin"/>
+            <fileset dir="gplx.gflucene/bin"/>
             <fileset dir="400_xowa/bin"/>
         </jar>
     </target>
